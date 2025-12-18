@@ -3,8 +3,6 @@
 Minimal, login‑protected todo list built with **Django function‑based views (FBVs)**.
 Users can register, log in, and manage a personal list of tasks through a clean, distraction‑free UI.
 
-![Image](C:\Users\Administrator\Desktop\Django-FBV-ToDo-APP\app demo\Screenshot 2025-12-18 175109.png)
-
 ---
 
 ## Features
