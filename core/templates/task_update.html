@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+<div>
+  <div class="page-title">
+    <h2>Edit task</h2>
+  </div>
+  <p class="page-subtitle">Refine the wording and keep it clear.</p>
+
+  <form method="post">
+    {% csrf_token %}
+    <div class="field-group">
+      <label for="{{ form.title.id_for_label }}">Task</label>
+      {{ form.title }}
+    </div>
+    <div class="stacked-actions">
+      <button type="submit" class="btn btn-primary">Save</button>
+      <a href="{% url 'task_list' %}">Back to list</a>
+    </div>
+  </form>
+</div>
+{% endblock %}
+
+

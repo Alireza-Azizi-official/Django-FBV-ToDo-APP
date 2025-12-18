@@ -1,11 +1,47 @@
 {% extends 'base.html' %}
 {% block content %}
-<h2>Login</h2>
-<form method="POST">
+<div class="auth-layout">
+  <div class="page-title">
+    <h2>Welcome back</h2>
+  </div>
+  <p class="page-subtitle">Sign in to see and manage your tasks.</p>
+
+  {% if messages %}
+    <ul class="messages">
+      {% for message in messages %}
+        <li>{{ message }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+  <form method="post">
     {% csrf_token %}
-    <input name="username" placeholder="Username">
-    <input type="password" name="password" placeholder="Password">
-    <button>Login</button>
-</form>
-<a href="{% url 'register' %}">Register</a>
+    <div class="field-group">
+      <label for="id_username">Username</label>
+      <input
+        id="id_username"
+        type="text"
+        name="username"
+        placeholder="yourname"
+        required
+      />
+    </div>
+    <div class="field-group">
+      <label for="id_password">Password</label>
+      <input
+        id="id_password"
+        type="password"
+        name="password"
+        placeholder="••••••••"
+        required
+      />
+    </div>
+    <button type="submit" class="btn btn-primary btn-full">Login</button>
+  </form>
+
+  <p class="auth-footer-link">
+    New here?
+    <a href="{% url 'register' %}">Create an account</a>
+  </p>
+</div>
 {% endblock %}
